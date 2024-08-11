@@ -1,13 +1,81 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+h1 {
+  color: green;
+  font-style: italic;
+
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.barraPrincipal {
+  height: 15%;
+  width: 100%;
+  background-color: forestgreen;
+  text-align: center;
+
+
+}
+
+a {
+  color: antiquewhite;
+}
+
+.barraSecundaria {
+  height: 10%;
+  width: 100%;
+  background-color: forestgreen;
+
+}
+
+html {
+  min-height: 100%;
+  position: relative;
+}
+
+body {
+  margin: 0;
+  margin-bottom: 40px;
+  background-image: url('https://images.pexels.com/photos/1470171/pexels-photo-1470171.jpeg');
+  background-size: cover; /* Asegura que la imagen cubra todo el fondo */
+  background-position: center; /* Centra la imagen en la pantalla */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  height: 100vh; /* Asegura que el cuerpo tenga la altura de la ventana */
+  margin: 0; /* Elimina márgenes alrededor del body */
+}
+
+footer {
+  background-color:  rgb(25, 135, 84);
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 40px;
+  color: white;
+}
+
+.cuerpo {
+  height: 95%;
+
+}
+
+#menuFooter {
+  display: flex;
+  justify-content: space-between;
+  /* Espacia los elementos hijos equitativamente */
+  width: 100%;
+  /* Hace que el div ocupe todo el ancho del footer */
+
+}
+
+#menuFooter div {
+  flex: 1;
+  /* Hace que cada div ocupe el 50% del ancho del padre */
+  text-align: center;
+  /* Centra el texto dentro de cada div */
+}
+.form-control{
+  width: 75%;
+}
+.btn {
+  background-color:  rgb(25, 135, 84);
+
+}
+table{
+  --bs-table-bg: transparent !important;
 }
