@@ -1,11 +1,12 @@
 import apiRoutes from '../../apiRoutes'; 
 import axios from 'axios'; 
 import { Persona } from '../dominio/Persona';
+import api from '../../security/api';
 
 const getAllPersonas = async () => {
     try {
         console.log('getAllPersona');
-        const response = await axios.get(apiRoutes.persona.getAll);
+        const response = await api.get(apiRoutes.persona.getAll);
         return response;
     } catch (error) {
         console.error('Error al obtener los Personas', error);
@@ -15,7 +16,7 @@ const getAllPersonas = async () => {
 
 const getPersonaById = async (id) => {
     try {
-        const response = await axios.get(apiRoutes.persona.getById(id));
+        const response = await api.get(apiRoutes.persona.getById(id));
         return response;
     } catch (error) {
         console.error(`Error al obtener el Persona con id ${id}`, error);
@@ -24,7 +25,7 @@ const getPersonaById = async (id) => {
 };
 const getPersonaByUserName = async (userName) => {
     try {
-        const response = await axios.get(apiRoutes.persona.getByUserName(userName));
+        const response = await api.get(apiRoutes.persona.getByUserName(userName));
         return response;
     } catch (error) {
         console.error(`Error al obtener el Persona con userName ${userName}`, error);
@@ -34,7 +35,7 @@ const getPersonaByUserName = async (userName) => {
 
 const createPersona = async (Persona) => {
     try {
-        const response = await axios.post(apiRoutes.persona.create, Persona);
+        const response = await api.post(apiRoutes.persona.create, Persona);
         return response;
     } catch (error) {
         console.error('Error al crear el Persona', error);
@@ -44,7 +45,7 @@ const createPersona = async (Persona) => {
 
 const updatePersona = async (Persona) => {
     try {
-        const response = await axios.put(apiRoutes.persona.update, Persona);
+        const response = await api.put(apiRoutes.persona.update, Persona);
         return response;
     } catch (error) {
         console.error(`Error al actualizar el Persona `, error);
@@ -54,7 +55,7 @@ const updatePersona = async (Persona) => {
 
 const deletePersona = async (id) => {
     try {
-        const response = await axios.delete(apiRoutes.persona.delete(id));
+        const response = await api.delete(apiRoutes.persona.delete(id));
         return response.data;
     } catch (error) {
         console.error(`Error al eliminar el Persona con id ${id}`, error);
@@ -63,7 +64,7 @@ const deletePersona = async (id) => {
 };
 const deletePerfil = async (userName) => {
     try {
-        const response = await axios.delete(apiRoutes.persona.deleteByUserName(userName));
+        const response = await api.delete(apiRoutes.persona.deleteByUserName(userName));
         return response.data;
     } catch (error) {
         console.error(`Error al eliminar el Persona con userName ${userName}`, error);

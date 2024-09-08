@@ -45,6 +45,7 @@ const Home = ({ onData }) => {
      return await sha256(message);
   }
 
+
   const onButtonClick = async () => {
     try {
       const msg = Login.fromJson(formData);
@@ -56,6 +57,7 @@ const Home = ({ onData }) => {
       const respuesta = LoginResp.fromJson(response.data);
 
       setResp(respuesta);
+      localStorage.setItem('authToken', respuesta.token);
 
       if (
         respuesta.idUser !== "-1" &&

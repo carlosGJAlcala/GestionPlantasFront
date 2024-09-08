@@ -1,11 +1,12 @@
 import apiRoutes from '../../apiRoutes'; 
 import axios from 'axios'; 
 import DepositoAgua from '../dominio/DepositoAgua';
+import api from '../../security/api';
 
 const getAllDepositosAgua = async () => {
     try {
         console.log('getAllDepositosAgua');
-        const response = await axios.get(apiRoutes.depositoAgua.getAll);
+        const response = await api.get(apiRoutes.depositoAgua.getAll);
         return response;
     } catch (error) {
         console.error('Error al obtener los Depósitos de Agua', error);
@@ -15,7 +16,7 @@ const getAllDepositosAgua = async () => {
 
 const getDepositoAguaById = async (id) => {
     try {
-        const response = await axios.get(apiRoutes.depositoAgua.getById(id));
+        const response = await api.get(apiRoutes.depositoAgua.getById(id));
         return response;
     } catch (error) {
         console.error(`Error al obtener el Depósito de Agua con id ${id}`, error);
@@ -24,7 +25,7 @@ const getDepositoAguaById = async (id) => {
 };
 const getDepositoAguaByUserName = async (userName) => {
     try {
-        const response = await axios.get(apiRoutes.depositoAgua.getByUserName(userName));
+        const response = await api.get(apiRoutes.depositoAgua.getByUserName(userName));
         return response;
     } catch (error) {
         console.error(`Error al obtener el Depósito de Agua con userName ${userName}`, error);
@@ -33,7 +34,7 @@ const getDepositoAguaByUserName = async (userName) => {
 };
 const createDepositoAgua = async (depositoAgua) => {
     try {
-        const response = await axios.post(apiRoutes.depositoAgua.create, depositoAgua);
+        const response = await api.post(apiRoutes.depositoAgua.create, depositoAgua);
         return response;
     } catch (error) {
         console.error('Error al crear el Depósito de Agua', error);
@@ -43,7 +44,7 @@ const createDepositoAgua = async (depositoAgua) => {
 
 const updateDepositoAgua = async (id, depositoAgua) => {
     try {
-        const response = await axios.put(apiRoutes.depositoAgua.update(id), depositoAgua);
+        const response = await api.put(apiRoutes.depositoAgua.update(id), depositoAgua);
         return response;
     } catch (error) {
         console.error(`Error al actualizar el Depósito de Agua con id ${id}`, error);
@@ -53,7 +54,7 @@ const updateDepositoAgua = async (id, depositoAgua) => {
 
 const deleteDepositoAgua = async (id) => {
     try {
-        const response = await axios.delete(apiRoutes.depositoAgua.delete(id));
+        const response = await api.delete(apiRoutes.depositoAgua.delete(id));
         return response;
     } catch (error) {
         console.error(`Error al eliminar el Depósito de Agua con id ${id}`, error);

@@ -33,7 +33,7 @@ export const plantaSchema = {
             type: 'string',
             title: 'Estado',
             description: 'Estado actual de la planta',
-            enum: ['saludable', 'enferma', 'muerta']
+            enum: ['ALEGRE', 'TRISTE', '']
         },
         tipoplantaIdtipoplanta: {
             type: 'integer',

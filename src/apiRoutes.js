@@ -1,6 +1,7 @@
 const port='8080';
 const ip='localhost';
-const API_BASE_URL='http://'+ip+':'+port;
+const API_BASE_URL='';
+const API_BASE_URL_Login='http://'+ip+':'+port;
 const apiRoutes={
     depositoAgua: {
         getAll: `${API_BASE_URL}/depositoagua`,
@@ -24,7 +25,7 @@ const apiRoutes={
     },
     login:{
      
-        aut: `${API_BASE_URL}/login`
+        aut: `${API_BASE_URL_Login}/auth/login`
         
     },
     maceta:{
@@ -71,8 +72,8 @@ const apiRoutes={
 
         getByNombre: (nombre) => `${API_BASE_URL}/sensor/${nombre}`,
         create: `${API_BASE_URL}/sensor`,
-        update:  `${API_BASE_URL}/sensor`,
-        updateSenDepAgua: `${API_BASE_URL}/sensorDepositoAgua`,
+        update:  `${API_BASE_URL_Login}/sensor`,
+        updateSenDepAgua: `${API_BASE_URL_Login}/sensorDepositoAgua`,
         delete: (id) => `${API_BASE_URL}/sensor/${id}`  
     },
     planta:{
