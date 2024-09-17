@@ -39,6 +39,16 @@ const MiPerfil=({ basePath, padding }) => {
     </div>
   );
 };
+const TipoPlantaUsuario=({ basePath, padding }) => {
+
+  return (
+    <div className='barraPrincipal p-3 mb-2 bg-success text-white'>
+      <Link style={padding} to={`${basePath}/list`}>List</Link>
+      <Link style={padding} to={`/Dashboard`}>Dashboard</Link>
+
+    </div>
+  );
+};
 const MiDeposito=({ basePath, padding }) => {
 
   return (
@@ -68,7 +78,7 @@ const Dashboard = ({perm ,userName}) => {
         {perm ? <Link style={padding} to="/Persona">Persona </Link> : <Link style={padding} to={`/Persona/${userName}`}>Mis datos </Link>}
         {perm ? <Link style={padding} to="/Planta">Planta </Link> : <Link style={padding} to={`/Planta/${userName}`}> Mis plantas </Link>}
         {perm ? <Link style={padding} to="/Sensor">Sensor </Link> : <Link style={padding} to={`/Sensor/${userName}`}>Mis sensores </Link> }
-       <Link style={padding} to="/TipoPlanta">Tipos de plantas </Link>
+        {perm ?<Link style={padding} to="/TipoPlanta">Biblioteca de Plantas</Link>:<Link style={padding} to={`/TipoPlanta/${userName}`}>Biblioteca de Plantas</Link>}
         
        <Link style={padding} to="/">Salir </Link> 
       </div>
@@ -133,7 +143,7 @@ const App = () => {
           <Route path={`/Persona/${userName}`}element={<MiPerfil basePath={`/Persona/${userName}`} padding={padding} />} />
           <Route path={`/Planta/${userName}`} element={<NavigationBar basePath={`/Planta/${userName}`} padding={padding} />} />
           <Route path={`/Sensor/${userName}`}element={<NavigationBar basePath={`/Sensor/${userName}`} padding={padding} />} />
-          <Route path={`/TipoPlanta/${userName}`} element={<NavigationBar basePath={`/TipoPlanta/${userName}`}padding={padding} />} />
+          <Route path={`/TipoPlanta/${userName}`} element={<TipoPlantaUsuario basePath={`/TipoPlanta/${userName}`}padding={padding} />} />
 
         </Routes>
       </div>
@@ -203,6 +213,8 @@ const App = () => {
         <Route path={`/Sensor/${userName}/delete`} element={<ComponenteComb Componente1={NavigationBar} Componente2={DeleteSensor} padding={padding} basePath={`/Sensor/${userName}`} userName={userName} />} />
 
         <Route path="/TipoPlanta/list" element={<ComponenteComb Componente1={NavigationBar} Componente2={TipoPlantaLista} padding={padding} basePath="/TipoPlanta" />} />
+        <Route path={`/TipoPlanta/${userName}/list`} element={<ComponenteComb Componente1={TipoPlantaUsuario} Componente2={TipoPlantaLista} padding={padding} basePath={`/TipoPlanta/${userName}`} userName={userName} />} />
+
         <Route path="/TipoPlanta/create" element={<ComponenteComb Componente1={NavigationBar} Componente2={CreateFormTipoPlanta} padding={padding} basePath="/TipoPlanta" />} />
         <Route path="/TipoPlanta/update" element={<ComponenteComb Componente1={NavigationBar} Componente2={UpdateFormTipoPlanta} padding={padding} basePath="/TipoPlanta" />} />
         <Route path="/TipoPlanta/delete" element={<ComponenteComb Componente1={NavigationBar} Componente2={DeleteTipoPlanta} padding={padding} basePath="/TipoPlanta" />} />

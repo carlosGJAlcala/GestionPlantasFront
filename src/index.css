@@ -33,11 +33,11 @@ body {
   margin: 0;
   margin-bottom: 40px;
   background-image: url('https://images.pexels.com/photos/1470171/pexels-photo-1470171.jpeg');
-  background-size: cover; /* Asegura que la imagen cubra todo el fondo */
-  background-position: center; /* Centra la imagen en la pantalla */
-  background-repeat: no-repeat; /* Evita que la imagen se repita */
-  height: 100vh; /* Asegura que el cuerpo tenga la altura de la ventana */
-  margin: 0; /* Elimina márgenes alrededor del body */
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat; 
+  height: 100vh; 
+  margin: 0; 
 }
 
 footer {
@@ -57,17 +57,14 @@ footer {
 #menuFooter {
   display: flex;
   justify-content: space-between;
-  /* Espacia los elementos hijos equitativamente */
+ 
   width: 100%;
-  /* Hace que el div ocupe todo el ancho del footer */
 
 }
 
 #menuFooter div {
   flex: 1;
-  /* Hace que cada div ocupe el 50% del ancho del padre */
   text-align: center;
-  /* Centra el texto dentro de cada div */
 }
 .form-control{
   width: 75%;
